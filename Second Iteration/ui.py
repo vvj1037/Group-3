@@ -285,14 +285,14 @@ def add():
 	                        plotx.append(df+pl)
 	                        ploty.append(df+ql)
 	                        if pl==0 and ql==0 and gsize>1:
-	                            plt.annotate(group,(df+pl,df+ql))
+	                            plt.annotate("  "+str(group),(df+pl,df+ql))
 	                df=df+gsize
 	                plt.plot(plotx,ploty,'.',color="blue")
 	                #print ploty[0]
 	                #
 
 
-	            plt.plot(tempx,tempy,'.',color="black")  
+	            #plt.plot(tempx,tempy,'.',color="black")  
 	            totalpts=0
 	            #FIRST ITERATION PLOT METHOD
 	            # parent.sort()  
