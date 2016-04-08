@@ -43,7 +43,10 @@ class particles(object):
         a.append([])
         prev.append([])
         for j in range(101):
-            a[i].append(randint(1,9)/float(10))
+            a[i].append(i/float(2001))
+    
+  
+    
     #a[1][0]=0.2
 
     
@@ -99,7 +102,7 @@ class particles(object):
 
     def analyze(self):
         global SIZE,a,occur,maxima,times_occur
-        for i in range(SIZE-1):
+        for i in range(SIZE):
             ctr=0
             for j in range(TIME-2):
                 if a[(i+1)][(j+2)]>a[(i+1)][(j+1)] and a[(i+1)][(j+2)]>a[(i+1)][(j+3)]:
@@ -118,7 +121,7 @@ class particles(object):
                         ts[particle]+=str(k)
             for k in range(0,sz):
                 for l in range(k+1,sz):
-                    if str(ts[times_occur[(i)][k]])==str(ts[times_occur[i][l]]):
+                    if str(ts[times_occur[(i)][k]])==str(ts[times_occur[i][l]]) and len(str(ts[times_occur[(i)][k]]))!=0:
                         parent[times_occur[(i)][l]]=parent[times_occur[(i)][k]]
                         print str(ts[times_occur[(i)][k]])
                         print str(ts[times_occur[i][l]])
@@ -130,7 +133,7 @@ obj1=particles()
 
 top = Tk()
 top.title("Cluster Visualizer")
-top.minsize(350,300)
+top.minsize(400,350)
 
 var = StringVar()
 var2 = StringVar()
@@ -285,7 +288,7 @@ def add():
 	                        plotx.append(df+pl)
 	                        ploty.append(df+ql)
 	                        if pl==0 and ql==0 and gsize>1:
-	                            plt.annotate("  "+str(group),(df+pl,df+ql))
+	                            plt.annotate("    "+str(group),(df+pl,df+ql))
 	                df=df+gsize
 	                plt.plot(plotx,ploty,'.',color="blue")
 	                #print ploty[0]
@@ -353,7 +356,7 @@ def add():
 
 
 	        anim = animation.FuncAnimation(fig, animate,
-	                                       frames=200, interval=10000, blit=True)
+	                                       frames=200, interval=5000, blit=True)
 	        plt.show()
 
 btnText.set("Plot Cluster")
@@ -377,7 +380,7 @@ def series():
 	    for pt in range(0,len(pts)):
 	    	temp=[]
 	    	for t in range(0,100):
-	    		temp.append((a[pts[pt]][t+1]*2)+pt*10)
+	    		temp.append((a[pts[pt]][t+1]*5)+pt*10)
 	    	ax1.plot(xar, temp,'r')
 
 		# for i in range(1,SIZE+1):
