@@ -351,8 +351,8 @@ def add():
 	            #     l=l+1
 	            #     ctr=1
 
-	            print a[1]
-	            print a[30]
+	            # print a[1]
+	            # print a[30]
 	                        
 	            plt.draw()
 	            if(obj1.counter==100):
@@ -394,7 +394,7 @@ def add():
 		    print clusterInfo[xdata[ind]][ydata[ind]]
 
 	        anim = animation.FuncAnimation(fig, animate,
-	                                       frames=200, interval=5000, blit=True)
+	                                       frames=200, interval=5000, blit=False)
 	        fig.canvas.mpl_connect('pick_event', onpick1)
 	        plt.show()
 
