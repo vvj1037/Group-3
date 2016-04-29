@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/Desktop/ClusterVisualizer
+
+
+python ui2.py

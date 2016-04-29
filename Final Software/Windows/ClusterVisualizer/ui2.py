@@ -419,6 +419,10 @@ def series():
 	#plt.clf()
 	#print i*100
 	for pt in range(0,len(pts)):
+		if pts[pt]<=0:
+			tkMessageBox.showinfo("Wrong Input","Wrong Input Values!")
+			return
+	for pt in range(0,len(pts)):
 		temp=[]
 		for t in range(0,100):
 			temp.append((a[pts[pt]][t+1]))
